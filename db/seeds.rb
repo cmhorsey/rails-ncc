@@ -1,9 +1,24 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+puts 'seeding now!'
+Restaurant.create([
+  {
+    name: "Jessops Tavern",
+    location: "114 Delaware St, New Castle, DE 19720",
+    description: "Casual pub in a circa-1724 building...",
+    images: [
+      "https://lh3.googleusercontent.com/p/AF1QipMqZ0AumEBBPjxdtFBVeXJOZ0XPIkbUTVp87kz0=s1360-w1360-h1020",
+      "https://giftcards.quickgifts.com/images/product/jessopstavpp_22103.jpg",
+      "https://cdn.savingplaces.org/2016/01/07/10/12/25/80/JessopsTavern_Exterior2_Credit_RonCogswell_Flickr_CCBY20.jpg"
+    ]
+  },
+  {
+    name: "The Mercury Cafe & Teahouse",
+    location: "206 Delaware Street Historic, New Castle, DE 19720",
+    description: "A cozy, community-focused eatery...",
+    images: [
+      "https://lh3.googleusercontent.com/p/AF1QipN6Ivixb-zpNYWFPfazgCNZOGuEYaqzv4ELDcMy=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipPntrRVsxUqel8HJ-NgiyBCCi9eJBYVB1N1ZJw0=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMuDWgiLC7wBIKZqTIpVMi1TVrUPFVzCv4iMAwr=s1360-w1360-h1020"
+    ]
+  }
+])
+puts 'all done'
