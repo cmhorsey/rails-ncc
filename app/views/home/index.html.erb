@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Visit New Castle County Delaware</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+  <div id="main-container">
+    <div class="btn-container">
+      <div class="category" id="dining">
+        <h1>Visit New Castle County Delaware</h1>
+        <div id="weather-container">
+          <h2 id="weatherHead">Current Weather</h2>
+          <p id="temp"></p>
+          <p id="rain"></p>
+        </div>
+        <button id="diningBtn" class="button-52" role="button">Dining</button>
+        <div class="options">
+          <ul id="diningOptions"></ul>
+        </div>
+      </div>
+      <div class="category" id="things-to-do">
+        <button id="activityBtn" class="button-52" role="button">Activities</button>
+        <div class="options">
+          <ul id="activityOptions"></ul>
+        </div>
+      </div>
+      <div class="category" id="things-to-see">
+        <button id="sightsBtn" class="button-52" role="button">Sights</button>
+        <div class="options">
+          <ul id="sightsOptions"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="option-details" id="optionDetails"></div>
+    <div class="itineraryList" id="itineraryListContainer">
+      <h1>My Itinerary</h1>
+      <ul id="itineraryList"></ul>
+    </div>
+  </div>
+</body>
+</html>

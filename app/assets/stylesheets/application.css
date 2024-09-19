@@ -1,0 +1,166 @@
+body {
+  font-family: helvetica;
+  font-weight: lighter;
+  margin: 50px;
+  padding: 0;
+}
+
+#main-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-container {
+  width: 25%;
+}
+
+#optionDetails {
+  text-align: center;
+  width: 25%;
+  height: 25%;
+  margin-top: 10%;
+}
+
+#itineraryListContainer {
+  width: 25%;
+  text-align: center;
+  /* border: #d19095 solid; */
+}
+
+.itineraryListItem {
+  text-align: center;
+  margin-left: 50px;
+  border: #d19095 solid;
+  width: 50%;
+  margin-left: 90px;
+  margin-top: 30px;
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+}
+
+.title-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: bisque;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  /* padding-left: 20px; */
+  margin-left: 10px;
+}
+
+h2 .option-name {
+  transform: translate(-50%, -50%);
+  color: bisque;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+li {
+  position: relative;
+  text-align: center;
+  width: 25%;
+}
+
+ul {
+  display: inline;
+  list-style-type: none;
+}
+
+#weather-container {
+  border: #000;
+  border-style: double;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.sunImage {
+  width: 45px;
+  height: 45px;
+}
+
+.button-52 {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #d19095;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+
+.info-btn {
+  font-size: 8px; /* Reduced by half */
+  font-weight: 200;
+  letter-spacing: 1px; /* Keep the same if necessary or adjust as needed */
+  padding: 6.5px 10px 6.5px; /* Reduced by half */
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.info-btn:after {
+  content: "";
+  background-color: #d19095;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 3.5px; /* Reduced by half */
+  left: 3.5px; /* Reduced by half */
+  transition: 0.2s;
+}
+
+.info-btn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .info-btn {
+    padding: 6.5px 25px 6.5px; /* Reduced by half */
+  }
+}
