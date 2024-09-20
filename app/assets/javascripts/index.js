@@ -210,62 +210,63 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((items) => items.forEach(createItineraryCard))
   }
 
-  // function fetchTemp() {
-  //   fetch(
-  //     "https://api.open-meteo.com/v1/forecast?latitude=39.6621&longitude=-75.5663&current=temperature_2m"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       let currentTemp = data.current.temperature_2m
-  //       currentTemp = celsiusToFahrenheit(currentTemp)
-  //       handleTempMessage(currentTemp)
-  //     })
-  // }
+  function fetchTemp() {
+    fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=39.6621&longitude=-75.5663&current=temperature_2m"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        let currentTemp = data.current.temperature_2m
+        currentTemp = celsiusToFahrenheit(currentTemp)
+        handleTempMessage(currentTemp)
+        console.log(data)
+      })
+  }
 
-  // function handleTempMessage(currentTemp) {
-  //   if (currentTemp > 75) {
-  //     tempP.innerText = `Current Temperature is ${currentTemp} °F, that's pretty toasty`
-  //   } else if (currentTemp < 75 && currentTemp > 65) {
-  //     tempP.innerText = `Current Temperature is ${currentTemp} °F, you're gonna wanna be outside`
-  //   } else if (currentTemp < 65 && currentTemp > 55) {
-  //     tempP.innerText = `Current Temperature is ${currentTemp} °F, aka sweater weather!`
-  //   } else if (currentTemp < 55) {
-  //     tempP.innerText = `Current Temperature is ${currentTemp} °F, brrrrr`
-  //   }
-  // }
+  function handleTempMessage(currentTemp) {
+    if (currentTemp > 75) {
+      tempP.innerText = `Current Temperature is ${currentTemp} °F, that's pretty toasty`
+    } else if (currentTemp < 75 && currentTemp > 65) {
+      tempP.innerText = `Current Temperature is ${currentTemp} °F, you're gonna wanna be outside`
+    } else if (currentTemp < 65 && currentTemp > 55) {
+      tempP.innerText = `Current Temperature is ${currentTemp} °F, aka sweater weather!`
+    } else if (currentTemp < 55) {
+      tempP.innerText = `Current Temperature is ${currentTemp} °F, brrrrr`
+    }
+  }
 
-  // function celsiusToFahrenheit(celsius) {
-  //   return Math.floor((celsius * 9) / 5 + 32)
-  // }
+  function celsiusToFahrenheit(celsius) {
+    return Math.floor((celsius * 9) / 5 + 32)
+  }
 
-  // function fetchRain() {
-  //   fetch(
-  //     "https://api.open-meteo.com/v1/forecast?latitude=39.6621&longitude=-75.5663&current=rain"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       let rainStatus = data.current.rain
-  //       handleWeatherIcon(rainStatus)
-  //     })
-  // }
+  function fetchRain() {
+    fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=39.6621&longitude=-75.5663&current=rain"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        let rainStatus = data.current.rain
+        handleWeatherIcon(rainStatus)
+      })
+  }
 
-  // function handleWeatherIcon(rainStatus) {
-  //   let weatherIcon = document.createElement("img")
-  //   weatherIcon.classList.add("sunImage")
+  function handleWeatherIcon(rainStatus) {
+    let weatherIcon = document.createElement("img")
+    weatherIcon.classList.add("sunImage")
 
-  //   if (rainStatus === 1) {
-  //     rainP.innerText = "It is raining, boo"
-  //     weatherIcon.src = rainImage
-  //   } else {
-  //     rainP.innerText = "It is not raining, yay!"
-  //     weatherIcon.src = sunImage
-  //   }
+    if (rainStatus === 1) {
+      rainP.innerText = "It is raining, boo"
+      weatherIcon.src = rainImage
+    } else {
+      rainP.innerText = "It is not raining, yay!"
+      weatherIcon.src = sunImage
+    }
 
-  //   weatherHead.appendChild(weatherIcon)
-  // }
+    weatherHead.appendChild(weatherIcon)
+  }
 
-  // fetchRain()
-  // fetchTemp()
+  fetchRain()
+  fetchTemp()
   displayFetchOptions(allRestaurantsURL, diningOptions, diningBtn)
   displayFetchOptions(allActivitiesURL, activityOptions, activityBtn)
   displayFetchOptions(allSightsURL, sightsOptions, sightsBtn)
