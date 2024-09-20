@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["button", "container", "details"]
 
+  arrowImage = "https://cdn-icons-png.flaticon.com/512/54/54382.png"
   connect() {
     console.log("Stimulus controller connected!")
   }
@@ -85,17 +86,24 @@ export default class extends Controller {
 
     const optionName = document.createElement("h2")
     const img = document.createElement("img")
+    const arrowIcon = document.createElement("img")
     const description = document.createElement("p")
     const itineraryBtn = document.createElement("button")
 
     optionName.innerText = option.name
     img.src = option.images[0]
+    arrowIcon.src = this.arrowImage
+
     description.innerText = option.description
+    arrowIcon.classList.add("arrowIcon")
+
     itineraryBtn.innerText = "Add to itinerary"
     itineraryBtn.classList.add("info-btn")
 
     detailsContainer.appendChild(optionName)
     detailsContainer.appendChild(img)
+    detailsContainer.appendChild(arrowIcon)
+
     detailsContainer.appendChild(description)
     detailsContainer.appendChild(itineraryBtn)
     detailsContainer.style.display = "block"

@@ -9,7 +9,7 @@ const application = Application.start()
 eagerLoadControllersFrom("controllers", application)
 
 document.addEventListener("DOMContentLoaded", function () {
-  const allRestaurantsURL = "/api/restaurants"
+  // const allRestaurantsURL = "/api/restaurants"
   // const allSightsURL = "http://localhost:3000/sights"
   // const allActivitiesURL = "http://localhost:3000/activities"
   // const myItineraryURL = "http://localhost:3000/myItinerary"
@@ -106,22 +106,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //   const optionName = document.createElement("h2")
   //   const img = document.createElement("img")
-  //   const arrowIcon = document.createElement("img")
+  // const arrowIcon = document.createElement("img")
   //   const description = document.createElement("p")
   //   const itineraryBtn = document.createElement("button")
 
   //   optionName.classList.add("option-name")
   //   optionName.innerText = option.name
   //   img.src = option.images[0]
-  //   arrowIcon.src = arrowImage
+  // arrowIcon.src = arrowImage
   //   description.innerText = option.description
-  //   arrowIcon.classList.add("arrowIcon")
+  // arrowIcon.classList.add("arrowIcon")
   //   itineraryBtn.innerText = "Add to itinerary"
   //   itineraryBtn.classList.add("info-btn")
 
   //   detailsContainer.appendChild(optionName)
   //   detailsContainer.appendChild(img)
-  //   detailsContainer.appendChild(arrowIcon)
+  // detailsContainer.appendChild(arrowIcon)
   //   detailsContainer.appendChild(description)
   //   detailsContainer.appendChild(itineraryBtn)
   //   detailsContainer.style.display = "block"
