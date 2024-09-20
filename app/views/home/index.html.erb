@@ -1,45 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Visit New Castle County Delaware</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'index' %>
-</head>
-
-<body>
-  <div id="main-container">
-    <div class="btn-container">
-      <div class="category" id="dining">
-        <h1>Visit New Castle County Delaware</h1>
-        <div id="weather-container">
-          <h2 id="weatherHead">Current Weather</h2>
-          <p id="temp"></p>
-          <p id="rain"></p>
-        </div>
-        <button id="diningBtn" class="button-52" role="button">Dining</button>
-        <div class="options">
-          <ul id="diningOptions"></ul>
-        </div>
+<div id="main-container" data-controller="display">
+  <div class="btn-container">
+    <div class="category" id="dining">
+      <h1>Visit New Castle County Delaware</h1>
+      <div id="weather-container">
+        <h2 id="weatherHead">Current Weather</h2>
+        <p id="temp" data-display-target="temp"></p>
+        <p id="rain" data-display-target="rain"></p>
       </div>
-      <div class="category" id="things-to-do">
-        <button id="activityBtn" class="button-52" role="button">Activities</button>
-        <div class="options">
-          <ul id="activityOptions"></ul>
-        </div>
+      <button data-action="click->display#displayFetchOptions"
+              data-url="/api/restaurants"
+              class="button-52"
+              role="button"
+              data-display-target="button">
+        Dining
+      </button>
+      <div class="options">
+        <ul data-display-target="container" data-options-visible="false"></ul>
       </div>
-      <div class="category" id="things-to-see">
-        <button id="sightsBtn" class="button-52" role="button">Sights</button>
-        <div class="options">
-          <ul id="sightsOptions"></ul>
-        </div>
-      </div>
-    </div>
-    <div class="option-details" id="optionDetails"></div>
-    <div class="itineraryList" id="itineraryListContainer">
-      <h1>My Itinerary</h1>
-      <ul id="itineraryList"></ul>
     </div>
   </div>
-</body>
-</html>
+
+  <div class="option-details" data-display-target="details"></div>
+
+  <div class="itineraryList" id="itineraryListContainer">
+    <h1>My Itinerary</h1>
+    <ul id="itineraryList" data-display-target="itinerary"></ul>
+  </div>
+</div>
